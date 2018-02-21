@@ -1,10 +1,10 @@
 
 # scrape a list of hotels from TA
 
-library(rvest)
-library(tidyverse)
-library(stringr)
-library(httr)
+if(!"pacman"%in%installed.packages()){
+  install.packages("pacman")
+}
+pacman::p_load(rvest, tidyverse, stringr, httr )
 
 if(!dir.exists("data")){
   dir.create("data")
