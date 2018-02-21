@@ -1,4 +1,5 @@
 
+# scrape a list of hotels from TA
 
 library(rvest)
 library(tidyverse)
