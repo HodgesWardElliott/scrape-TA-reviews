@@ -6,9 +6,12 @@ library(tidyverse)
 library(stringr)
 library(httr)
 
+if(!dir.exists("data")){
+  dir.create("data")
+}
 
 # input ase cities + base url's in this csv:
-city_base_pages <- read_csv("data/list-of-tripadvisor-city-basepages.csv")
+city_base_pages <- read_csv("INPUT-list-of-cities.csv")
 
 # add "oa%s" to each URL foro paginating later
 inject_sprintf <- function(string){
@@ -20,12 +23,16 @@ inject_sprintf <- function(string){
 city_base_pages$modified_url <- map_chr(city_base_pages$Link, inject_sprintf)
 
 
-# if a city has already been scraped, don't waste time
-if(file.exists("data/hotel-name-list-scrape.csv")){
-  already_scraped <- read_csv("data/hotel-name-list-scrape.csv")
+# if a city has already been scraped, don't waste the time
+if(file.exists("data/OUTPUT-hotel-link-list.csv")){
+  already_scraped <- read_csv("data/OUTPUT-hotel-link-list.csv")
 } else already_scraped <- data_frame("city" = NA)
 
 city_base_pages_not_done <- city_base_pages %>% filter(!City %in% unique(already_scraped$city))
+
+if(nrow(city_base_pages_not_done)==0) {
+  stop("No new citites to scrape")
+  }
 
 # disply target cities
 message("working on the following cities: "
@@ -140,7 +147,7 @@ for(jj in 1:nrow(city_base_pages_not_done)){ # one outer loop for each city
 
 
 
-
+# summarise and view the output:
 pat <- "[#][0-9]+ Best Value of | hotels in *.*"
 
 out_frame %>% 
