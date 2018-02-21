@@ -122,7 +122,15 @@ $(document).ready(function () {
 </div>
 
 
-
+<p>Three scripts:</p>
+<ol style="list-style-type: decimal">
+<li><p><code>scrape-tripadvisor-data.R</code></p></li>
+<li><p><code>scrape-individual-hotels.R</code></p></li>
+<li><p><code>extract-hotel-data.R</code></p></li>
+</ol>
+<p>The first gathers a list of hotels and the associated links based on the <code>INPUT-list-of-cities.csv</code> file.</p>
+<p>The second script loops through the output of the first and downloads the html pages of individual hotel sites.</p>
+<p>The thirds script extracts data from the stored html pages.</p>
 
 
 
