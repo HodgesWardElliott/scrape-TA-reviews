@@ -137,13 +137,13 @@ for(jj in 1:nrow(city_base_pages_not_done)){ # one outer loop for each city
   
   message('writing to csv...')
   
-  if(file.exists("data/hotel-name-list-scrape.csv")){
-    write_csv(out_frame, "data/hotel-name-list-scrape.csv", append = TRUE)
-  } else write_csv(out_frame, "data/hotel-name-list-scrape.csv", append = FALSE)
+  if(file.exists("data/OUTPUT-hotel-link-list.csv")){
+    write_csv(all_results, "data/OUTPUT-hotel-link-list.csv", append = TRUE)
+  } else write_csv(all_results, "data/OUTPUT-hotel-link-list.csv", append = FALSE)
   
 }
 
-# file.remove("hotel-name-list-scrape.csv")
+# file.remove("data/OUTPUT-hotel-link-list.csv")
 
 
 
