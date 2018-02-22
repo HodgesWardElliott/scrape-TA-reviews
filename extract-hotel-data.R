@@ -138,11 +138,6 @@ for(jj in 1:length(yet_to_process)){
 # file.remove("data/raw_html_already_processed.csv")
 # file.remove("data/processed_html_data.rds")
 
-total_list %>% 
-  head(10) %>% 
-  map(~ifelse(lengths(.x)!=1, NA, .x)) %>% 
-  map(bind_rows) %>% 
-  bind_rows()
 
 
 
