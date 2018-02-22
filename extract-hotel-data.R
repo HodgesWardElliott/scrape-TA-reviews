@@ -66,15 +66,19 @@ for(jj in 1:length(yet_to_process)){
     str_replace_all("[#][0-9]+ Best Value of | [hH]otels in *.*|[#][0-9]+ of ","") %>% 
     as.numeric()
   
-  data_list$address_street <- 
+  address_street <- 
     raw_html %>% 
     html_node(".street-address") %>% 
     html_text()
   
-  data_list$address_city <- 
+  data_list$address_street <- address_street
+  
+  address_city <- 
     raw_html %>% 
     html_node(".locality") %>% 
     html_text()
+  
+  data_list$address_city <- address_city
   
   data_list$full_address <- paste(address_street, address_city, sep = ", ")
   
