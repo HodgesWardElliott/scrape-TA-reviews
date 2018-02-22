@@ -14,7 +14,7 @@ pacman::p_load(rvest, tidyverse, stringr, httr, parallel)
 
 
 base_link_global <- "https://www.tripadvisor.com"
-all_links <- read_csv("data/OUTPUT-hotel-link-list.csv")
+all_links <- suppressMessages(read_csv("data/OUTPUT-hotel-link-list.csv"))
 
 clean_links <- 
   all_links %>% 
@@ -40,4 +40,7 @@ system(paste0("cat 'data/links_not_downloaded.txt'| xargs -n 1 -P ", ceiling(par
 
 message("     ...html files downloaded")
 
+
+links_not_downloaded_check <- full_links[!basename(full_links) %in% dir('data/html_raw')]
+if(length(links_not_downloaded_check)!=0) stop("Some links not downloaded")
 
