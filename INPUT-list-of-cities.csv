@@ -1,11 +1,28 @@
-﻿City,Link
-Atlanta,https://www.tripadvisor.com/Hotels-g60898-Atlanta_Georgia-Hotels.html
-Boston,https://www.tripadvisor.com/Hotels-g60745-Boston_Massachusetts-Hotels.html
-Dallas,https://www.tripadvisor.com/Hotels-g55711-Dallas_Texas-Hotels.html
-"Washington, D.C.",https://www.tripadvisor.com/Hotels-g28970-Washington_DC_District_of_Columbia-Hotels.html
-Denver,https://www.tripadvisor.com/Hotels-g33388-Denver_Colorado-Hotels.html
-Houston,https://www.tripadvisor.com/Hotels-g56003-Houston_Texas-Hotels.html
-Miami,https://www.tripadvisor.com/Hotels-g34438-Miami_Florida-Hotels.html
-Philadelphia,https://www.tripadvisor.com/Hotels-g60795-Philadelphia_Pennsylvania-Hotels.html
-San Francisco,https://www.tripadvisor.com/Hotels-g60713-San_Francisco_California-Hotels.html
-Seattle,https://www.tripadvisor.com/Hotels-g60878-Seattle_Washington-Hotels.html
+﻿Roll Up City,City,Link
+Atlanta,Atlanta,https://www.tripadvisor.com/Hotels-g60898-Atlanta_Georgia-Hotels.html
+Boston,Boston,https://www.tripadvisor.com/Hotels-g60745-Boston_Massachusetts-Hotels.html
+Dallas,Dallas,https://www.tripadvisor.com/Hotels-g55711-Dallas_Texas-Hotels.html
+"Washington, D.C.","Washington, D.C.",https://www.tripadvisor.com/Hotels-g28970-Washington_DC_District_of_Columbia-Hotels.html
+Denver,Denver,https://www.tripadvisor.com/Hotels-g33388-Denver_Colorado-Hotels.html
+Houston,Houston,https://www.tripadvisor.com/Hotels-g56003-Houston_Texas-Hotels.html
+Miami,Miami,https://www.tripadvisor.com/Hotels-g34438-Miami_Florida-Hotels.html
+Philadelphia,Philadelphia,https://www.tripadvisor.com/Hotels-g60795-Philadelphia_Pennsylvania-Hotels.html
+San Francisco,San Francisco,https://www.tripadvisor.com/Hotels-g60713-San_Francisco_California-Hotels.html
+Seattle,Seattle,https://www.tripadvisor.com/Hotels-g60878-Seattle_Washington-Hotels.html
+Miami,Miami Beach,https://www.tripadvisor.com/Hotels-g34439-Miami_Beach_Florida-Hotels.html
+Boston,Cambridge,https://www.tripadvisor.com/Hotels-g60890-Cambridge_Massachusetts-Hotels.html
+Austin,Austin,https://www.tripadvisor.com/Hotels-g30196-Austin_Texas-Hotels.html
+Nashville,Nashville,https://www.tripadvisor.com/Hotels-g55229-Nashville_Davidson_County_Tennessee-Hotels.html
+Fort Lauderdale,Fort Lauderdale,https://www.tripadvisor.com/Hotels-g34227-Fort_Lauderdale_Broward_County_Florida-Hotels.html
+Daytona Beach,Daytona Beach,https://www.tripadvisor.com/Hotels-g34172-Daytona_Beach_Florida-Hotels.html
+St. Pete Beach,St. Pete Beach,https://www.tripadvisor.com/Hotels-g34607-St_Petersburg_Florida-Hotels.html
+Clearwater,Clearwater,https://www.tripadvisor.com/Hotels-g34141-Clearwater_Florida-Hotels.html
+Tampa,Tampa,https://www.tripadvisor.com/Hotels-g34678-Tampa_Florida-Hotels.html
+Naples,Naples,https://www.tripadvisor.com/Hotels-g34467-Naples_Florida-Hotels.html
+Orlando,Orlando,https://www.tripadvisor.com/Hotels-g34515-Orlando_Florida-Hotels.html
+Chicago,Chicago,https://www.tripadvisor.com/Hotels-g35805-Chicago_Illinois-Hotels.html
+San Antonio,San Antonio,https://www.tripadvisor.com/Hotels-g60956-San_Antonio_Texas-Hotels.html
+New Orleans,New Orleans,https://www.tripadvisor.com/Hotels-g60864-New_Orleans_Louisiana-Hotels.html
+Los Angeles CA,Los Angeles CA,https://www.tripadvisor.com/Hotels-g32655-Los_Angeles_California-Hotels.html
+Hollywood CA,Hollywood CA,https://www.tripadvisor.com/Hotels-g32655-zfn7231035-Los_Angeles_California-Hotels.html
+San Diego CA,San Diego CA,https://www.tripadvisor.com/Hotels-g60750-San_Diego_California-Hotels.html

@@ -15,6 +15,8 @@ pacman::p_load(rvest, tidyverse, stringr, httr, parallel)
 
 base_link_global <- "https://www.tripadvisor.com"
 all_links <- suppressMessages(read_csv("data/OUTPUT-hotel-link-list.csv"))
+# remove any duplicate IDs. some hotels are listed in more than 1 city, i.e., LA and Hollywood
+all_links <- distinct(all_links, id, .keep_all = TRUE)
 
 clean_links <- 
   all_links %>% 

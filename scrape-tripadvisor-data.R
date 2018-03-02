@@ -44,6 +44,8 @@ message("working on the following cities: "
 out_frame <- data.frame()
 for(jj in 1:nrow(city_base_pages_not_done)){ # one outer loop for each city
   
+  # jj <- 1
+  
   # some constansts for the loop
   city <- city_base_pages_not_done$City[jj]
   base_link <- city_base_pages_not_done$Link[jj]
@@ -57,7 +59,6 @@ for(jj in 1:nrow(city_base_pages_not_done)){ # one outer loop for each city
     
     offset <- all_page_offsets[counter]
     message(city,", ",jj," of ",nrow(city_base_pages_not_done) ," Counter ", counter," of ",length(all_page_offsets)," offset ", offset)
-    message()
     Sys.sleep(2)
     
     # our request url:
@@ -121,8 +122,8 @@ for(jj in 1:nrow(city_base_pages_not_done)){ # one outer loop for each city
     
     if(counter>1){
       if(sum(!links_and_ids$id%in%all_results$id) <10) {
-        message("links repeating, ending loop...")
-        break
+        counter <- counter+1
+        break("links repeating, ending loop...")
       }
     }
     
@@ -145,11 +146,10 @@ for(jj in 1:nrow(city_base_pages_not_done)){ # one outer loop for each city
 
 # file.remove("data/OUTPUT-hotel-link-list.csv")
 
-
+pat <- "[#][0-9]+ Best Value of | [hH]otels in *.*|[#][0-9]+ of "
 
 # summarise and view the output:
-pat <- "[#][0-9]+ Best Value of | hotels in *.*"
-
+#1 Best Value of 167 hotels in New Orlean
 out_frame %>% 
   mutate(rank_text_mod = str_replace(rank_text, pat, "")) %>% 
   group_by(city, rank_text_mod) %>% 
@@ -157,8 +157,11 @@ out_frame %>%
 
 nrow(out_frame)
 
-
-
+out_frame %>% 
+  group_by(id) %>% 
+  summarise(count = n()) %>% 
+  arrange(-count) %>% 
+  count(count)
 
 
 

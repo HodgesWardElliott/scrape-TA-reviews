@@ -11,7 +11,6 @@ if(!file.exists("data/OUTPUT-hotel-link-list.csv")) stop("File require: OUTPUT-h
 all_links <- suppressMessages(read_csv("data/OUTPUT-hotel-link-list.csv"))
 if(length(dir('data/html_raw'))!=length(unique(all_links$href))) stop("You seem to be missing some links int he html_raw folder")
 
-# "https://www.tripadvisor.com/Hotel_Review-g60898-d114380-Reviews-JW_Marriott_Atlanta_Buckhead-Atlanta_Georgia.html"
 
 # cheeck to see if some of the pages have already been processed:
 all_pages <- dir('data/html_raw')
@@ -133,6 +132,10 @@ total_list <-
     
     data_list$full_link <- paste0("https://www.tripadvisor.com/",page_of_interest)
     
+    raw_html %>% 
+      html_node(".deskextra .sub_content:nth-child(2) , .deskextra .sub_content:nth-child(2) .textitem")
+    
+    
     data_list <- list(data_list)
     names(data_list) <- data_list[[1]]$title
     
@@ -143,6 +146,7 @@ total_list <-
     }
     return(data_list)
   }; stopCluster(cl)
+
 
 write_rds(total_list, "data/processed_html_data.rds")
 
