@@ -31,6 +31,8 @@ if(!"pacman"%in%installed.packages()){
   install.packages("pacman")
 }
 pacman::p_load(rvest, tidyverse, stringr, httr, parallel, RSelenium)
+
+# it is unclear if require() is better to call explicitly than p_load when using Rscript+crontab
 require(rvest)
 require(tidyverse)
 require(stringr)
@@ -39,6 +41,9 @@ require(parallel)
 require(RSelenium)
 require(methods)
 
+
+
+# start scrape job --------------------------------------------------------
 
 base_link_global <- "https://www.tripadvisor.com"
 all_links <- suppressMessages(read_csv("data/OUTPUT-hotel-link-list.csv"))
@@ -67,7 +72,6 @@ clean_links <- anti_join(clean_links, already_scraped, by = "id")
 
 write_csv(data.frame("MRR" = paste0("Most recent run: ", format(Sys.time(), tz = "EST")," EST. Left: ", left_to_scrape_count)), 'MRR.txt', append = T)
 message("Total left to scrape: ", left_to_scrape_count)
-# clean_links <- head(clean_links, 20)
 
 # connect to server
 remDr <- remoteDriver(port = 4445L, browserName = "firefox")
